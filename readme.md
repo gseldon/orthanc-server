@@ -9,13 +9,39 @@
 + использование внешней базы данных
 + реализация через ci\cd
 
-## Плагин для работы с S3 AWS S3 plugin
+## Структура 
+
+```
+orthanc-arhive-s3
+|
+|__app\                             # Папка приложения
+|  |_lib\                           # Библиотеки для плагинов
+|  |_plugin\                        # Внешние плагины
+|  |_orthanc.secret.json            # Блоки конфигурации orthanc   
+|__.                                # Файлы для запуска
+```
+
+## Подготовка 
+
+1. Собрать проект находясь в корне
+
+```
+git clone <URL>.git
+docker-compose build
+```
+2. Запуск проекта
+
+```
+docker-compose up -d
+```
+
+### Плагин для работы с S3 AWS S3 plugin
 
 [AWS S3 plugin](https://book.orthanc-server.com/plugins/object-storage.html#id1)
 
 Подготовка для сборки плагина.
 
-```bash 
+```bash
 sudo apt-get update && sudo apt-get install -y build-essential g++
 mkdir ~/aws
 cd ~/aws
