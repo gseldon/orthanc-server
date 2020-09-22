@@ -1,0 +1,9 @@
+{
+    "AwsS3Storage" : {
+    "BucketName": "orthanc-arhive",
+    "Region": "ru-central1",
+    "AccessKey": "irZwupoJt0yWW8MAFv05",
+    "SecretKey": "uPPnYfQb0hgtyJxuOAezy6Hk3OH9c7fgmLt9_YbC",
+    "Endpoint": "storage.yandexcloud.net"
+  }
+}

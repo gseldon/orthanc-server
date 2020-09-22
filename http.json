@@ -1,0 +1,8 @@
+{
+  "RemoteAccessAllowed": true,
+  "HttpTimeout": 0,
+  "HttpsVerifyPeers": true,
+  "HttpsCACertificates" : "/etc/ssl/certs/ca-certificates.crt",
+  "HttpProxy": "",
+  "HttpPort": 8042
+}

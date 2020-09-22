@@ -4,23 +4,13 @@ services:
         volumes: 
 #            - ./app/backup:/backup 
 #            - ./app/plugins:/usr/share/orthanc/build-plugins
-#            - ./app/plugins:/usr/share/orthanc/plugins/s3
-            - ./app/lib:/usr/lib/s3
-#           - ./app/orthanc.json:/etc/orthanc/orthanc.json
+           - ./app/plugins:/usr/share/orthanc/plugins
+           - ./plugins.json:/etc/orthanc/plugins.json
+           - ./storage.json:/etc/orthanc/storage.json
+           - ./http.json:/etc/orthanc/http.json
         container_name: covid_orthanc_prod
         build: .
         restart: always
-#        image: osimis/orthanc:19.11.2
-#        image: osimis/orthanc
-        environment: 
-            - ORTHANC_WEB_VIEWER_PLUGIN_ENABLED=true
-            - OSIMIS_WEB_VIEWER1_PLUGIN_ENABLED=true
-            - LD_LIBRARY_PATH=/usr/lib/s3
-        secrets:
-            - orthanc.secret.json
         ports:
             - "4242:4242"
             - "8042:8042"
-secrets:
-    orthanc.secret.json:
-        file: ./app/orthanc.secret.json
