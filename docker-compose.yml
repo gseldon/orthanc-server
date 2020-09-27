@@ -2,7 +2,7 @@ version: '3.3'
 services:
     orthanc:
         volumes: 
-            - /mnt/tmp:/backup 
+            - s3fs:/backup 
 #            - ./app/plugins:/usr/share/orthanc/build-plugins
 #           - ./app/plugins:/usr/share/orthanc/plugins
 #           - ./plugins.json:/etc/orthanc/plugins.json
@@ -24,7 +24,7 @@ services:
         devices:
           - /dev/fuse
         volumes:
-          - /mnt/tmp:/opt/s3fs/bucket:rshared
+          - s3fs:/opt/s3fs/bucket
           - ./.pass:/.pass
         env_file: 
           - ./.env
@@ -41,3 +41,5 @@ services:
         #необходимо выставить под нудного пользователя и группу своего проекта
           UID: 1000
           GID: 1000
+volumes: 
+    s3fs:
