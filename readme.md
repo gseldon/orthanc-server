@@ -21,40 +21,8 @@ orthanc-arhive-s3
 |__.                                # Файлы для запуска
 ```
 
-## Подготовка 
 
-1. Собрать проект находясь в корне
 
-```
-git clone <URL>.git
-docker-compose build
-```
-2. Запуск проекта
-
-```
-docker-compose up -d
-```
-
-### Плагин для работы с S3 AWS S3 plugin
-
-[AWS S3 plugin](https://book.orthanc-server.com/plugins/object-storage.html#id1)
-
-Подготовка для сборки плагина.
-
-```bash
-sudo apt-get update && sudo apt-get install -y build-essential g++
-mkdir ~/aws
-cd ~/aws
-
-git clone https://github.com/aws/aws-sdk-cpp.git
-
-mkdir -p ~/aws/builds/aws-sdk-cpp
-cd ~/aws/builds/aws-sdk-cpp
-
-cmake -DBUILD_ONLY="s3;transfer" -DCMAKE_BUILD_TYPE=Debug ~/aws/aws-sdk-cpp
-make -j 4
-make install
-```
 
 ## Help URL
 ---

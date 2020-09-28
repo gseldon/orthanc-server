@@ -1,45 +1,47 @@
 version: '3.3'
 services:
-    orthanc:
-        volumes: 
-            - s3fs:/backup 
+s3:
+    privileged: true
+    image: efrecon/s3fs
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - 'apparmor:unconfined'
+    devices:
+      - /dev/fuse
+    volumes:
+      - /mnt/tmp:/opt/s3fs/bucket:rshared
+      - ./.pass:/.pass
+    env_file:
+      - ./.env
+    environment:
+      AWS_S3_BUCKET: '${AWS_S3_BUCKET}'
+      AWS_S3_ACCESS_KEY_ID: '${AWS_S3_ACCESS_KEY_ID}'
+      AWS_S3_SECRET_ACCESS_KEY: '${AWS_S3_SECRET_ACCESS_KEY}'
+      AWS_S3_AUTHFILE: '${AWS_S3_AUTHFILE}'
+      AWS_S3_SECRET_ACCESS_KEY_FILE: '${AWS_S3_SECRET_ACCESS_KEY_FILE}'
+      AWS_S3_URL: '${AWS_S3_URL}'
+      AWS_S3_MOUNT: '/opt/s3fs/bucket'
+      #S3FS_ARGS: 'allow_other'
+      S3FS_DEBUG: 0
+    # необходимо выставить под нужного пользователя и группу своего проекта
+    # 
+    #  UID: 1000
+    #  GID: 1000
+
+orthanc:
+    volumes:
+      - /mnt/tmp:/backup:rshared
 #            - ./app/plugins:/usr/share/orthanc/build-plugins
 #           - ./app/plugins:/usr/share/orthanc/plugins
 #           - ./plugins.json:/etc/orthanc/plugins.json
 #           - ./storage.json:/etc/orthanc/storage.json
 #           - ./http.json:/etc/orthanc/http.json
-        image: osimis/orthanc
-        container_name: covid_orthanc_prod
-        restart: always
-        ports:
-            - "4242:4242"
-            - "8042:8042"
-    s3:
-        image: efrecon/s3fs
-        restart: unless-stopped
-        cap_add:
-          - SYS_ADMIN
-        security_opt:
-          - 'apparmor:unconfined'
-        devices:
-          - /dev/fuse
-        volumes:
-          - s3fs:/opt/s3fs/bucket
-          - ./.pass:/.pass
-        env_file: 
-          - ./.env
-        environment:
-          AWS_S3_BUCKET: '${AWS_S3_BUCKET}'
-          AWS_S3_ACCESS_KEY_ID: '${AWS_S3_ACCESS_KEY_ID}'
-          AWS_S3_SECRET_ACCESS_KEY: '${AWS_S3_SECRET_ACCESS_KEY}'
-          AWS_S3_AUTHFILE: '${AWS_S3_AUTHFILE}'
-          AWS_S3_SECRET_ACCESS_KEY_FILE: '${AWS_S3_SECRET_ACCESS_KEY_FILE}'
-          AWS_S3_URL: '${AWS_S3_URL}'
-          AWS_S3_MOUNT: '/opt/s3fs/bucket'
-          S3FS_ARGS: ''
-          S3FS_DEBUG: 0
-        #необходимо выставить под нудного пользователя и группу своего проекта
-          UID: 1000
-          GID: 1000
-volumes: 
-    s3fs:
+    image: osimis/orthanc
+    depends_on:
+        - s3
+    restart: always
+    ports:
+        - "4242:4242"
+        - "8042:8042"
