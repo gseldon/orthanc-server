@@ -33,7 +33,7 @@ services:
   orthanc:
       volumes:
           - /mnt/tmp:/var/lib/orthanc/db:rshared
-          #учесть размещение на объемном диске.
+          #учесть размещение на объемном диске
           - /tmp/Orthanc:/tmp/Orthanc
   #           - ./app/plugins:/usr/share/orthanc/plugins
           - ./conf.json:/etc/orthanc/conf.json
