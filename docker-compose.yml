@@ -37,7 +37,7 @@ services:
   #           - ./app/plugins:/usr/share/orthanc/plugins
           - ./conf.json:/etc/orthanc/conf.json
   #           - ./storage.json:/etc/orthanc/storage.json
-  #           - ./http.json:/etc/orthanc/http.json
+          - ./http.json:/etc/orthanc/http.json
       image: osimis/orthanc
       depends_on:
           - s3
