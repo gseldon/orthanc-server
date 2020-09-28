@@ -1,0 +1,13 @@
+{
+  "PostgreSQL": {
+    "EnableIndex": true,
+    "EnableStorage": false,
+    "Port": 5432,
+    "Host": "host=rc1a-9jk6atyfbmynumtw.mdb.yandexcloud.net",
+    "Database": "psql-arhive-pacs-db",
+    "Username": "test",
+    "Password": "12345678",
+    "EnableSsl": false,
+    "Lock": false
+  }
+}
