@@ -2,7 +2,7 @@
   "PostgreSQL": {
     "EnableIndex": true,
     "EnableStorage": false,
-    "Port": 5432,
+    "Port": 6432,
     "Host": "rc1a-9jk6atyfbmynumtw.mdb.yandexcloud.net",
     "Database": "psql-arhive-pacs-db",
     "Username": "test",
