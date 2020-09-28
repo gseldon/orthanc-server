@@ -33,11 +33,10 @@ services:
   orthanc:
       volumes:
           - /mnt/tmp:/var/lib/orthanc/db:rshared
-  #            - ./app/plugins:/usr/share/orthanc/build-plugins
+          #учесть размещение на объемном диске.
+          - /tmp/Orthanc:/tmp/Orthanc
   #           - ./app/plugins:/usr/share/orthanc/plugins
           - ./conf.json:/etc/orthanc/conf.json
-  #           - ./storage.json:/etc/orthanc/storage.json
-          - ./http.json:/etc/orthanc/http.json
       image: osimis/orthanc
       depends_on:
           - s3

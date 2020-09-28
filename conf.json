@@ -1,4 +1,7 @@
 {
+  "DicomPort" : 4242,
+  "DicomAet" : "ORTHANC_ARCHIVE",
+// настройки подключения к базе 
   "PostgreSQL": {
     "EnableIndex": true,
     "EnableStorage": false,
@@ -9,5 +12,16 @@
     "Password": "12345678",
     "EnableSsl": false,
     "Lock": false
-  }
+  },
+// Описание храненеия данных
+  "StorageCompression" : true,
+  "TemporaryDirectory" : "/tmp/Orthanc/",
+
+// Web настройки
+"RemoteAccessAllowed": true,
+"HttpTimeout": 0,
+"HttpsVerifyPeers": true,
+"HttpsCACertificates" : "/etc/ssl/certs/ca-certificates.crt",
+"HttpProxy": "",
+"HttpPort": 8042
 }
