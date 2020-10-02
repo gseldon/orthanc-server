@@ -1,6 +1,10 @@
 {
   "DicomPort" : 4242,
   "DicomAet" : "ORTHANC_ARCHIVE",
+  "DicomServerEnabled": true,
+  "ConcurrentJobs" : 2,
+  "MaximumStorageSize" : 0,
+  "MaximumPatientCount" : 0,
 // настройки подключения к базе 
   "PostgreSQL": {
     "EnableIndex": true,
@@ -15,7 +19,7 @@
   },
 // Описание храненеия данных
   "StorageCompression" : true,
-  "TemporaryDirectory" : "/tmp/Orthanc/",
+//  "TemporaryDirectory" : "/tmp/Orthanc/",
 
 // Web настройки
 "RemoteAccessAllowed": true,
