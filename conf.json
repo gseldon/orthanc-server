@@ -19,7 +19,7 @@
   },
 // Описание храненеия данных
   "StorageCompression" : true,
-  "TemporaryDirectory" : "/tmp/Orthanc/",
+  "TemporaryDirectory" : "/tmp/Orthanc",
 
 // Web настройки
 "RemoteAccessAllowed": true,
