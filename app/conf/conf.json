@@ -11,10 +11,10 @@
     "EnableIndex": true,
     "EnableStorage": false,
     "Port": 6432,
-    "Host": "rc1a-b2kbt0e8utjaibk3.mdb.yandexcloud.net",
-    "Database": "psql-arhive-pacs-db",
-    "Username": "arhive-pacs",
-    "Password": "8Vd6SY11rk51",
+    "Host": "<>",
+    "Database": "<>",
+    "Username": "<>",
+    "Password": "<>",
     "EnableSsl": false,
     "Lock": false
   },
@@ -35,5 +35,4 @@
   "hub" : "BTZTjwPT3hAthGE8",
   "monitor" : "XjHRjtAMBah5vQKA"
 }
-
 }
