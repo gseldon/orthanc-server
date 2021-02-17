@@ -1,19 +1,20 @@
 {
+  "Name" : "ORTHANC_ARCHIVE",
   "DicomPort" : 4242,
   "DicomAet" : "ORTHANC_ARCHIVE",
   "DicomServerEnabled": true,
   "ConcurrentJobs" : 2,
   "MaximumStorageSize" : 0,
   "MaximumPatientCount" : 0,
-// настройки подключения к базе 
+// настройки подключения к удаленной базе 
   "PostgreSQL": {
     "EnableIndex": true,
     "EnableStorage": false,
     "Port": 6432,
-    "Host": "rc1a-9jk6atyfbmynumtw.mdb.yandexcloud.net",
+    "Host": "rc1a-b2kbt0e8utjaibk3.mdb.yandexcloud.net",
     "Database": "psql-arhive-pacs-db",
-    "Username": "test",
-    "Password": "12345678",
+    "Username": "arhive-pacs",
+    "Password": "8Vd6SY11rk51",
     "EnableSsl": false,
     "Lock": false
   },
@@ -27,5 +28,12 @@
 "HttpsVerifyPeers": true,
 "HttpsCACertificates" : "/etc/ssl/certs/ca-certificates.crt",
 "HttpProxy": "",
-"HttpPort": 8042
+"HttpPort": 8042,
+
+"RegisteredUsers" : {
+  "dianet" : "CGkW4q5PwqTT7ZkF",
+  "hub" : "BTZTjwPT3hAthGE8",
+  "monitor" : "XjHRjtAMBah5vQKA"
+}
+
 }
