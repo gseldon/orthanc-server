@@ -1,7 +1,7 @@
 {
-  "Name" : "ORTHANC_ARCHIVE",
+  "Name" : "ORTHANC_PILOT01",
   "DicomPort" : 4242,
-  "DicomAet" : "ORTHANC_ARCHIVE",
+  "DicomAet" : "ORTHANC_PILOT01",
   "DicomServerEnabled": true,
   "ConcurrentJobs" : 2,
   "MaximumStorageSize" : 0,
@@ -10,11 +10,11 @@
   "PostgreSQL": {
     "EnableIndex": true,
     "EnableStorage": false,
-    "Port": 6432,
-    "Host": "<>",
-    "Database": "<>",
-    "Username": "<>",
-    "Password": "<>",
+    "Port": 5432,
+    "Host": "db",
+    "Database": "orthanc",
+    "Username": "admin",
+    "Password": "Zxcv12345",
     "EnableSsl": false,
     "Lock": false
   },
@@ -25,8 +25,8 @@
 // Web настройки
 "RemoteAccessAllowed": true,
 "HttpTimeout": 0,
-"HttpsVerifyPeers": true,
-"HttpsCACertificates" : "/etc/ssl/certs/ca-certificates.crt",
+// "HttpsVerifyPeers": true,
+// "HttpsCACertificates" : "/etc/ssl/certs/ca-certificates.crt",
 "HttpProxy": "",
 "HttpPort": 8042,
 
@@ -34,5 +34,9 @@
   "dianet" : "CGkW4q5PwqTT7ZkF",
   "hub" : "BTZTjwPT3hAthGE8",
   "monitor" : "XjHRjtAMBah5vQKA"
+},
+// Разрешенные паксы для подключения
+"DicomModalities" : {
+  "VIDAR" : [ "VIDAR", "vidar.pilot.corp.npcmr.ru", 104 ] // Пилот для ShowRoom
 }
 }

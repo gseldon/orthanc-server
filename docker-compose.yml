@@ -8,18 +8,36 @@ x-log: &logging
       max-file: "10"
 
 services:
-  orthanc:
+  app:
       <<: *logging
       image: osimis/orthanc
-      depends_on:
-        - s3
       restart: always
+      depends_on: 
+        - db
       volumes:
-        - /mnt/tmp:/var/lib/orthanc/db:rshared
+        - orthanc:/var/lib/orthanc/db
         #учесть размещение на объемном диске
         - /tmp/Orthanc:/tmp/Orthanc
         - ./app/conf/conf.json:/etc/orthanc/conf.json
       ports:
         - "4242:4242"
-        - "8042:8042"
-  # db:
+        - "80:8042"
+  db:
+      <<: *logging
+      image: postgres:13
+      restart: always
+      volumes:
+        - postgres1:/var/lib/postgresql/data
+        - /etc/localtime:/etc/localtime:ro
+      environment:
+        - POSTGRES_USER=admin
+        - POSTGRES_PASSWORD=Zxcv12345
+        - POSTGRES_DB=orthanc
+volumes:
+  postgres1:
+  orthanc:
+    driver: local
+    driver_opts:
+        o: bind
+        type: none
+        device: /opt/data01/otrhanc_data/
