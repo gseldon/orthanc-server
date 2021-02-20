@@ -13,8 +13,8 @@
     "Port": 5432,
     "Host": "db",
     "Database": "orthanc",
-    "Username": "admin",
-    "Password": "Zxcv12345",
+    "Username": "groot",
+    "Password": "4VewIvJEgCh33rB4IXUe",
     "EnableSsl": false,
     "Lock": false
   },
@@ -31,9 +31,7 @@
 "HttpPort": 8042,
 
 "RegisteredUsers" : {
-  "dianet" : "CGkW4q5PwqTT7ZkF",
-  "hub" : "BTZTjwPT3hAthGE8",
-  "monitor" : "XjHRjtAMBah5vQKA"
+  "Expert" : "ExpertNPC!2021"
 },
 // Разрешенные паксы для подключения
 "DicomModalities" : {

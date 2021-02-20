@@ -30,8 +30,8 @@ services:
         - postgres1:/var/lib/postgresql/data
         - /etc/localtime:/etc/localtime:ro
       environment:
-        - POSTGRES_USER=admin
-        - POSTGRES_PASSWORD=Zxcv12345
+        - POSTGRES_USER=groot
+        - POSTGRES_PASSWORD=4VewIvJEgCh33rB4IXUe
         - POSTGRES_DB=orthanc
 volumes:
   postgres1:
