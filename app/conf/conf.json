@@ -13,8 +13,8 @@
     "Port": 5432,
     "Host": "db",
     "Database": "orthanc",
-    "Username": "groot",
-    "Password": "4VewIvJEgCh33rB4IXUe",
+    "Username": "admin",
+    "Password": "Zxcv12345",
     "EnableSsl": false,
     "Lock": false
   },
@@ -31,10 +31,13 @@
 "HttpPort": 8042,
 
 "RegisteredUsers" : {
-  "Expert" : "ExpertNPC!2021"
+  "dianet" : "CGkW4q5PwqTT7ZkF",
+  "hub" : "BTZTjwPT3hAthGE8",
+  "monitor" : "XjHRjtAMBah5vQKA"
 },
 // Разрешенные паксы для подключения
 "DicomModalities" : {
-  "VIDAR" : [ "VIDAR", "vidar.pilot.corp.npcmr.ru", 104 ] // Пилот для ShowRoom
+  "VIDAR" : [ "VIDAR", "vidar.pilot.corp.npcmr.ru", 104 ], // Пилот для ShowRoom
+  "KOMETA" : [ "KOMETA", "172.16.141.105", 104 ] // Пилот для ShowRoom
 }
 }
