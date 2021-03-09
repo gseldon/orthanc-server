@@ -38,7 +38,7 @@
 // Разрешенные паксы для подключения
 "DicomModalities" : {
   "VIDAR" : [ "VIDAR", "vidar.pilot.corp.npcmr.ru", 104 ], // Пилот для ShowRoom
-  "KOMETA" : [ "KOMETA", "172.16.141.105", 104 ], // Пилот для ShowRoom
+  "KOMETA" : [ "KMT", "172.16.24.2", 104 ], // Пилот для ShowRoom
   "LINS01" : [ "LINS01", "172.16.141.102", 104 ], // Пилот для ShowRoom
   "LINS02" : [ "LINS02", "172.16.141.103", 104 ] // Пилот для ShowRoom
 }
