@@ -1,20 +1,13 @@
 ![logo]
 
-# PACS + BD + OHIF
+# PACS + BD
 
-Проксирование веб орфанка через встроенный nginx внутри OHIF.
+Проект пакса + БД.
 
-OHIF http://localhost:3000/
-
-| Сервис  |  URL  |         |
-|---      |---    |---
-| OHIF    |http://localhost:3000   |
-| Orhanc    |http://localhost:3000/pacs   |
-|                                  |        |
-
-## Авторизация базовая через Orhanc
-
-demo:demo
+Пример открытия ссылки через локальный weasis
+```
+weasis://$dicom:close+--all+$dicom:rs+--url+"http://localhost/dicom-web"+-r+"patientID=f350b490-2e04-4711-9308-db25246b0c0b"
+```
 
 ## Help URL
 ---

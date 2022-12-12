@@ -1,55 +1,28 @@
 {
-  "Name" : "ORTHANC_PILOT01",
-  "DicomPort" : 4242,
-  "DicomAet" : "ORTHANC_PILOT01",
-  "DicomServerEnabled": true,
-  "ConcurrentJobs" : 2,
-  "MaximumStorageSize" : 0,
-  "MaximumPatientCount" : 0,
-// настройки подключения к удаленной базе 
-  "PostgreSQL": {
-    "EnableIndex": true,
-    "EnableStorage": false,
-    "Port": 5432,
-    "Host": "db",
-    "Database": "orthanc",
-    "Username": "groot",
-    "Password": "c5xO^44bTI",
-    "EnableSsl": false,
-    "Lock": false
-  },
-// Описание храненеия данных
-  "StorageCompression" : true,
-  "TemporaryDirectory" : "/tmp/Orthanc",
-
-// Web настройки
-"RemoteAccessAllowed": true,
-"HttpTimeout": 0,
-"DicomWeb" : {
-  "Enable" : true,            // Whether DICOMweb support is enabled
-  "Root" : "/dicom-web/",     // Root URI of the DICOMweb API (for QIDO-RS, STOW-RS and WADO-RS)
-  "EnableWado" : true,        // Whether WADO-URI (previously known as WADO) support is enabled
-  "WadoRoot" : "/wado",       // Root URI of the WADO-URI (aka. WADO) API
-  "Ssl" : false,              // Whether HTTPS should be used for subsequent WADO-RS requests
-  "QidoCaseSensitive" : false, // For QIDO-RS server, whether search is case sensitive (since release 0.5)
-  "Host" : "localhost",       // Hard-codes the name of the host for subsequent WADO-RS requests (deprecated)
-  "StudiesMetadata" : "Full", // How study-level metadata is retrieved (since release 1.1, cf. section below)
-  "SeriesMetadata" : "Full",   // How series-level metadata is retrieved (since release 1.1, cf. section below)
-
-
-  "StowMaxInstances" : 0,    // For STOW-RS client, the maximum number of instances in one single HTTP query (0 = no limit)
-  "StowMaxSize" : 0         // For STOW-RS client, the maximum size of the body in one single HTTP query (in MB, 0 = no limit)    
-},
-// "HttpsVerifyPeers": true,
-// "HttpsCACertificates" : "/etc/ssl/certs/ca-certificates.crt",
-"HttpProxy": "",
-"HttpPort": 8042,
-
-"RegisteredUsers" : {
-  "demo" : "demo"
-},
-// Разрешенные паксы для подключения
-"DicomModalities" : {
-  "demo" : [ "demo", "demo.pilot.corp.npcmr.ru", 104 ] // Пилот для ShowRoom
-}
+  "DicomPort":4242,
+  "DicomAet":"READER-STUDY",
+  "DicomServerEnabled":true,
+  "ConcurrentJobs":4,
+  "MaximumStorageSize":0,
+  "MaximumPatientCount":0,
+  "StorageCompression":true,
+  "TemporaryDirectory":"/tmp/Orthanc",
+  "RemoteAccessAllowed":true,
+  "HttpTimeout":0,
+  "HttpsVerifyPeers":true,
+  "HttpProxy":"",
+  "HttpPort":8042,
+  "AuthenticationEnabled": false,
+  "DicomWeb" : {
+    "Enable" : true,
+    "Root" : "/dicom-web/",
+    "EnableWado" : true,
+    "WadoRoot" : "/wado",
+    "Ssl" : false,
+    "QidoCaseSensitive" : true,
+    "Host" : "",   
+    "StudiesMetadata" : "Full",
+    "SeriesMetadata" : "Full", 
+    "PublicRoot": "/dicom-web/"
+  }
 }

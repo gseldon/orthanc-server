@@ -1,0 +1,3 @@
+FROM osimis/orthanc
+
+COPY ./conf/conf.json /etc/orthanc/conf.json
