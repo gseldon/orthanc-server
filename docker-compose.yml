@@ -8,7 +8,8 @@ x-log: &logging
       max-file: "10"
 
 x-env-orthanc: &orthanc
-  ORTHANC__NAME:  ${ORTHANC__NAME}
+  ORTHANC__AET:   ${ORTHANC__AET:-orthanc_rd}
+  ORTHANC__NAME:  ${ORTHANC__NAME:-orthanc}
   ORTHANC__POSTGRESQL__PASSWORD: ${POSTGRES_PASSWORD}
   ORTHANC__POSTGRESQL__ENABLE_INDEX: "true"
   ORTHANC__POSTGRESQL__ENABLE_STORAGE: "false"
@@ -53,6 +54,8 @@ services:
       - /tmp/Orthanc:size=1G
     depends_on:
       - db
+    ports:
+      - 4242:4242
     networks:
       - front
       - back
@@ -81,4 +84,6 @@ volumes:
     driver_opts:
       o: bind
       type: none
+      # задает место хранения данных орфанка.
+      # папка должна существовать
       device: ${ORTHANC_VOLUMES_DATA:-/mnt/datasets}

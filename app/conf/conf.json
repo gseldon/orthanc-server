@@ -1,6 +1,6 @@
 {
   "DicomPort":4242,
-  "DicomAet":"READER-STUDY",
+  "DicomAet":"${ORTHANC_AET:-DefaultName}",
   "DicomServerEnabled":true,
   "ConcurrentJobs":4,
   "MaximumStorageSize":0,
