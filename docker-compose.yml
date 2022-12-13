@@ -27,7 +27,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile-nginx
-    image: nginx:stable
+    image: orthanc-proxy
     restart: unless-stopped
     tmpfs:
       - /var/cache/nginx/proxy_temp:size=1G
